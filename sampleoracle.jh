@@ -1,0 +1,30 @@
+entity Region {
+	name String
+}
+
+entity Country {
+	name String
+}
+
+entity Location {
+	adress String,
+	postalCode String,
+	city String,
+	state String
+}
+
+entity Warehouse {
+	name String
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Warehouse{location} to Location
+}
